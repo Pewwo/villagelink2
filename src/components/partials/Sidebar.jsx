@@ -1,15 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBullhorn, FaEnvelope, FaPhoneAlt, FaQuestionCircle, FaUsers } from 'react-icons/fa';
 import { MdLogout, MdMenu } from 'react-icons/md';
 import { MdOutlineFeedback } from "react-icons/md";
+import useSocket from '../../hooks/useSocket';
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [notificationCount, setNotificationCount] = useState(0);
 
   const toggleSidebar = () => {
     setIsExpanded(!isExpanded);
   };
+
+
+
+  // Socket handlers for real-time updates
+  const handleNewRequest = () => setNotificationCount(prev => prev + 1);
+  const handleNewComplaint = () => setNotificationCount(prev => prev + 1);
+  const eventHandlers = {
+    new_request: () => {
+      console.log('Received new_request event');
+      handleNewRequest();
+    },
+    new_complaint: () => {
+      console.log('Received new_complaint event');
+      handleNewComplaint();
+    },
+  };
+  const socket = useSocket(eventHandlers);
 
   return (
      <aside
@@ -33,9 +52,14 @@ const Sidebar = () => {
           <FaBullhorn size={18} />
           {isExpanded && <span className="whitespace-nowrap">Announcements</span>}
         </Link>
-        <Link to="/reslayout/requests" className="relative flex items-center gap-3 hover:bg-gray-700 p-2 rounded group" title="Request and Complaints">
+        <Link to="/reslayout/requests" className="relative flex items-center gap-3 hover:bg-gray-700 p-2 rounded group" title="Request and Complaints" onClick={() => setNotificationCount(0)}>
           <FaEnvelope size={18} />
           {isExpanded && <span className="whitespace-nowrap">Request and Complaints</span>}
+          {notificationCount > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+              {notificationCount > 9 ? '9+' : notificationCount}
+            </span>
+          )}
         </Link>
         <Link to="/reslayout/sos" className="relative flex items-center gap-3 hover:bg-gray-700 p-2 rounded group" title="SOS">
           <FaPhoneAlt size={18} />
