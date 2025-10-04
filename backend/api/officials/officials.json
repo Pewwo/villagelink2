@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Santos",
+    "role": "Barangay Captain",
+    "avatar": "https://randomuser.me/api/portraits/women/1.jpg",
+    "contact": "09123456789",
+    "address": "123 Main St, Springfield"
+  },
+  {
+    "id": 2,
+    "name": "Phoenix Baker",
+    "role": "Engineering Manager",
+    "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+    "contact": "09123456789",
+    "address": "456 Elm St, Springfield"
+  },
+  {
+    "id": 3,
+    "name": "Lana Steiner",
+    "role": "Product Manager",
+    "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+    "contact": "09123456789",
+    "address": "789 Oak St, Springfield"
+  },
+  {
+    "id": 4,
+    "name": "Demi Wilkinson",
+    "role": "Frontend Developer",
+    "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+    "contact": "09123456789",
+    "address": "101 Pine St, Springfield"
+  },
+  {
+    "id": 5,
+    "name": "Candice Wu",
+    "role": "Backend Developer",
+    "avatar": "https://randomuser.me/api/portraits/women/5.jpg",
+    "contact": "09123456789",
+    "address": "202 Maple St, Springfield"
+  },
+  {
+    "id": 6,
+    "name": "Natali Craig",
+    "role": "Product Designer",
+    "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+    "contact": "09123456789",
+    "address": "303 Cedar St, Springfield"
+  },
+  {
+    "id": 7,
+    "name": "Drew Cano",
+    "role": "UX Researcher",
+    "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+    "contact": "09123456789",
+    "address": "404 Birch St, Springfield"
+  },
+  {
+    "id": 8,
+    "name": "Orlando Diggs",
+    "role": "Customer Success",
+    "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
+    "contact": "09123456789",
+    "address": "505 Walnut St, Springfield"
+  }
+]
